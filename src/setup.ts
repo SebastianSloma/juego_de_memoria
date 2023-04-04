@@ -20,12 +20,12 @@ export type CardType = {
 
 const cards: string[] =[card1, card2, card3, card4, card5, card6, card7, card8]
 
-export const createBoard =(): CardType[] =>
-[...cards, ...cards].map((card, i) =>({
+export const createBoard = (): CardType[] =>
+  [...cards, ...cards].map((card, i) => ({
     id: `card${i}`,
     flipped: false,
     backImage: cardBack,
     frontImage: card,
     clickable: true,
     matchingCardId: i < cards.length ? `card${i + cards.length}` : `card${i - cards.length}`
-}))
+  }));
